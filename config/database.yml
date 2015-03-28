@@ -5,13 +5,19 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: primaryDB
   pool: 5
-  timeout: 5000
+  host: dropit86.clccqobovaar.eu-central-1.rds.amazonaws.com
+  port: 5432
+  username: dropit
+  password: ronandyaron
+
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  #database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
